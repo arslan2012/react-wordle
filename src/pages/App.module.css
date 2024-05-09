@@ -27,13 +27,61 @@
 }
 
 .correct {
+    border-color: lightgreen;
     background-color: lightgreen;
 }
 
 .incorrect {
+    border-color: lightgray;
     background-color: lightgray;
 }
 
 .inWord {
-    background-color: lightyellow;
+    border-color: #c5b366;
+    background-color: #c5b366;
+}
+
+/* WinningAnimation */
+.win {
+    display: grid;
+    place-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 9999;
+    transform: scale(0);
+    animation: show 2s forwards;
+}
+
+@keyframes show {
+    100% {
+        transform: scale(10);
+    }
+}
+
+/* WrongInputAnimation */
+.vibrateAnimation {
+    animation: vibrate 0.5s linear;
+}
+
+@keyframes vibrate {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-16px);
+    }
+    50% {
+        transform: translateX(16px);
+    }
+    75% {
+        transform: translateX(-16px);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
